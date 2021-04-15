@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="RootPane" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <ToolBar GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+         <items>
+            <ButtonBar prefHeight="33.0" prefWidth="435.0">
+               <buttons>
+                  <Button fx:id="btnPrevious" mnemonicParsing="false" style="-fx-background-color: rgba(255,255,255,0);" text="◂◂">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnStop" mnemonicParsing="false" style="-fx-background-color: rgba(255,255,255,0);" text="■">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnStart" mnemonicParsing="false" style="-fx-background-color: rgba(255,255,255,0);" text="▶">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnPause" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: rgba(255,255,255,0);" text=" ▌▌" textAlignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnNext" mnemonicParsing="false" style="-fx-background-color: rgba(255,255,255,0);" text="▸▸">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </buttons>
+            </ButtonBar>
+         </items>
+      </ToolBar>
+      <MediaView fx:id="mediaView" fitHeight="125.0" fitWidth="300.0" GridPane.rowIndex="2" />
+      <ListView fx:id="Playlist" prefHeight="126.0" prefWidth="105.0" GridPane.columnSpan="3" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" />
+         </GridPane.margin>
+      </ListView>
+      <ButtonBar prefHeight="30.0" prefWidth="449.0" GridPane.rowIndex="1">
+         <buttons>
+            <Button mnemonicParsing="false" onMouseClicked="#ToPlaylistAdd" prefHeight="27.0" prefWidth="108.0" style="-fx-background-color: rgba(255,255,255,0); -fx-border-color: silver;" text="Add to playlist">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#ToShuffle" style="-fx-background-color: rgba(255,255,255,0); -fx-border-color: silver;" text="shuffle">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#ToOpenFile" style="-fx-background-color: rgba(255,255,255,0); -fx-border-color: silver;" text="Open file" textAlignment="CENTER" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#ToCleanPlayList" style="-fx-background-color: rgba(255,255,255,0); -fx-border-color: silver;" text="clean playlist" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </buttons>
+      </ButtonBar>
+   </children>
+   <rowConstraints>
+      <RowConstraints maxHeight="67.0" minHeight="39.0" prefHeight="39.0" valignment="TOP" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="79.0" minHeight="19.0" prefHeight="30.0" valignment="TOP" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="129.0" prefHeight="150.0" valignment="TOP" vgrow="ALWAYS" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
+      <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+   </columnConstraints>
+</GridPane>
